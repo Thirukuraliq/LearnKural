@@ -11,7 +11,7 @@ API_KEY = "sk_efe945501fc4a2ba48efb6686082cf84dcf30394017cd8c7"
 # Maneesh - Upbeat, Professional & Friendly
 VOICE_ID = "pTM0m0egrCpo5i9b1gpo" 
 MODEL_ID = "eleven_v3"
-OUTPUT_DIR = "audio"
+OUTPUT_DIR = "."
 
 client = ElevenLabs(api_key=API_KEY)
 
@@ -50,9 +50,6 @@ def main():
     parser.add_argument('--limit', type=int, default=None, help='Limit number of files to generate')
     parser.add_argument('--start_id', type=int, default=1, help='ID to start from')
     args = parser.parse_args()
-
-    if not os.path.exists(OUTPUT_DIR):
-        os.makedirs(OUTPUT_DIR)
 
     df = pd.read_csv('Thirukural.csv')
     
